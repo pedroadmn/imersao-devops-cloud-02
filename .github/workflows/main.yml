@@ -23,8 +23,8 @@ jobs:
           file: ./home-broker/01-worker/Dockerfile
           push: true
           tags: |
-            fabricioveronez/trader-worker:${{github.run_number}}
-            fabricioveronez/trader-worker:latest
+            pedroadmn/trader-worker:${{github.run_number}}
+            pedroadmn/trader-worker:latest
       - name: Construindo a imagem do api
         uses: docker/build-push-action@v4.1.1
         with:
@@ -32,8 +32,8 @@ jobs:
           file: ./home-broker/02-api/Dockerfile
           push: true
           tags: |
-            fabricioveronez/trader-api:${{github.run_number}}
-            fabricioveronez/trader-api:latest
+            pedroadmn/trader-api:${{github.run_number}}
+            pedroadmn/trader-api:latest
       - name: Construindo a imagem do frontend
         uses: docker/build-push-action@v4.1.1
         with:
@@ -41,8 +41,8 @@ jobs:
           file: ./home-broker/03-frontend/Dockerfile
           push: true
           tags: |
-            fabricioveronez/trader-web:${{github.run_number}}
-            fabricioveronez/trader-web:latest
+            pedroadmn/trader-web:${{github.run_number}}
+            pedroadmn/trader-web:latest
           build-args: |
             next_url=a6f33c0fbbb5347f1b7f1833bd9d1daa-157400115.us-east-1.elb.amazonaws.com
             next_url_api=a22bba60b4ca440b393dd90ce091c783-466327151.us-east-1.elb.amazonaws.com
